@@ -34,7 +34,7 @@ const Navbar = ({ deliveryTime, location }) => {
         }}
         className="hidden md:fixed w-full z-50 md:flex justify-around items-center px-14 py-2"
       >
-        <p className="mb-2 text-3xl text-center font-semibold text-purple-700">
+        <p className="mb-2 text-3xl text-center font-semibold text-purple-900">
           Zepto
         </p>
         {deliveryTime ? (
@@ -85,7 +85,7 @@ const Navbar = ({ deliveryTime, location }) => {
             isScrolled ? "hidden opacity-0" : "opacity-100"
           }`}
         >
-          <p className="text-3xl text-center font-semibold text-purple-700 ">
+          <p className="text-3xl text-center font-semibold text-purple-900 ">
             Zepto
           </p>
           <div>

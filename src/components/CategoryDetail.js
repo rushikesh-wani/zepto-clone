@@ -27,28 +27,34 @@ const CategoryDetail = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-2 gap-y-2 md:gap-x-4 md:gap-y-4">
           {item.map((item) => (
             <div key={item.tag} className="">
-              <div className="relative">
+              <div className="relative ">
                 <img
                   src={ItemImg}
                   alt=""
                   className=" w-full h-full rounded-xl object-cover hover:scale-105 hover:duration-300"
                 />
-                <p className="absolute bottom-2 left-2 text-xs text-rose-900 bg-rose-200 px-2 rounded-sm">
+                {/* <p className="absolute bottom-2 left-2 text-xs text-rose-900 bg-rose-200 px-2 rounded-sm">
                   {item.tag}
-                </p>
-                <p className="absolute w-10 h-11 md:h-11 md:w-12 top-0 left-0 text-xs text-white bg-black px-2 rounded-tl-xl rounded-br-3xl">
+                </p> */}
+                <img
+                  className="h-10 w-9 rounded-tl-xl absolute top-0 left-0"
+                  src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/10.18.4/images/offer-tag.svg"
+                  alt="discount"
+                />
+                <p className="absolute top-1 left-2 font-semibold text-[10px] text-white text-center">
                   {item.discount} <br></br>off
                 </p>
               </div>
-              <p className="text-base font-semibold mb-4">{item.name}</p>
-              <p className="text-sm mb-2">{item.qty}</p>
-              <div className="font-semibold mb-1 flex gap-x-2 items-baseline">
-                <p className="">{item.price}</p>
-                <p className="text-xs">{item.price}</p>
+              <p className="text-base font-semibold">{item.name}</p>
+              <p className="text-sm mb-5">{item.qty}</p>
+              <p className="text-gray-600 line-through">{item.price}</p>
+              <div className="font-semibold mb-1 flex gap-x-2 items-baseline justify-between">
+                <p className="text-lg font-bold">{item.price}</p>
+
+                <button className="border border-blue-600 font-normal text-blue-600 py-1 px-5 rounded-md focus:outline-none">
+                  ADD
+                </button>
               </div>
-              <button className="border border-[#ff3269] text-[#ff3269] font-medium py-1 w-full rounded-lg focus:outline-none">
-                Add to Cart
-              </button>
             </div>
           ))}
         </div>

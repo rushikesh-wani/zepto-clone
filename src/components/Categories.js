@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Categories = () => {
   const [data, setData] = useState([]);
@@ -15,12 +16,13 @@ const Categories = () => {
   }
   return (
     <>
-      <div className="px-5 py-2 h-screen md:px-40 md:py-20 bg-slate-50 ">
-        <h1 className="text-2xl font-bold">Shop by category</h1>
+      <div className="px-5 py-2 h-fit md:px-40 md:py-20 bg-slate-50 ">
+        <h1 className="text-2xl font-bold font-poppins">Shop by category</h1>
         <div className="py-2">
           <div className="grid grid-cols-4 md:grid-cols-8 shrink-0 gap-2 py-2">
             {data.map((items) => (
-              <div
+              <Link
+                to="/categorydetail"
                 key={items?._id}
                 className="p-2 flex flex-wrap justify-center bg-gradient-to-b from-sky-200 to-slate-50 hover:from-slate-50 hover:to-sky-100 rounded-lg"
               >
@@ -32,7 +34,25 @@ const Categories = () => {
                   />
                 </div>
                 <p className="text-xs text-center">{items?.title}</p>
-              </div>
+              </Link>
+            ))}
+          </div>
+          <div className="grid grid-cols-4 md:grid-cols-8 shrink-0 gap-2 py-2">
+            {data.map((items) => (
+              <Link
+                to="/categorydetail"
+                key={items?._id}
+                className="p-2 flex flex-wrap justify-center bg-gradient-to-b from-sky-200 to-slate-50 hover:from-slate-50 hover:to-sky-100 rounded-lg"
+              >
+                <div className="">
+                  <img
+                    className="w-full h-full"
+                    src={items?.image}
+                    alt={items?.title}
+                  />
+                </div>
+                <p className="text-xs text-center">{items?.title}</p>
+              </Link>
             ))}
           </div>
         </div>

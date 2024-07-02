@@ -19,7 +19,7 @@ const SubNavbar = () => {
           </div>
         </div>
         <span className="">
-          <FaSearch />
+          <FaSearch className="text-xl" />
         </span>
       </nav>
       {/* for larger screens */}
